@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Bank account</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Bank accounts</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account type --></label>
+        <name>Account_type__c</name>
+        <picklistValues>
+            <masterLabel>Credit</masterLabel>
+            <translation><!-- Credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Debit</masterLabel>
+            <translation><!-- Debit --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Balance --></label>
+        <name>Balance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer --></label>
+        <name>Customer__c</name>
+        <relationshipLabel><!-- Bank accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Daily limit --></label>
+        <name>Daily_limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Debt per month --></label>
+        <name>Debt_per_month__c</name>
+    </fields>
+    <fields>
+        <label><!-- Flag --></label>
+        <name>Flag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Initial daily limit --></label>
+        <name>Initial_daily_limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Initial monthly limit --></label>
+        <name>Initial_monthly_limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Monthly limit --></label>
+        <name>Monthly_limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- One time limit --></label>
+        <name>One_time_limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Overdraft --></label>
+        <name>Overdraft__c</name>
+    </fields>
+    <fields>
+        <label><!-- Overdraft limit --></label>
+        <name>Overdraft_limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Redemption of an overdraft --></label>
+        <name>Redemption_of_an_overdraft__c</name>
+    </fields>
+    <fields>
+        <label><!-- Replenishment per month --></label>
+        <name>Replenishment_per_month__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total debt --></label>
+        <name>Total_debt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction Current Month --></label>
+        <name>Transaction_Current_Month__c</name>
+    </fields>
+    <layouts>
+        <layout>Bank account Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Credit Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Debit Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Bank Account Record Type --></label>
+        <name>Bank_Account_Record_Type</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Credit Record Type --></label>
+        <name>Credit_Record_Type</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Debit Record Type --></label>
+        <name>Debit_Record_Type</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Block_bank_acc --></label>
+        <name>Block_bank_acc</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Request_to_overdraft_approving --></label>
+        <name>Request_to_overdraft_approving</name>
+    </webLinks>
+</CustomObjectTranslation>

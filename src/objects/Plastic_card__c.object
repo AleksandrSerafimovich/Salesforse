@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Balance__c</fullName>
+        <externalId>false</externalId>
+        <label>Balance</label>
+        <summarizedField>Transaction__c.Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>Transaction__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Transaction__c.Card__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Bank_account__c</fullName>
+        <externalId>false</externalId>
+        <label>Bank account</label>
+        <referenceTo>Bank_account__c</referenceTo>
+        <relationshipLabel>Plastic cards</relationshipLabel>
+        <relationshipName>Plastic_cards</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Card_end_date__c</fullName>
+        <defaultValue>TODAY() + 1095</defaultValue>
+        <externalId>false</externalId>
+        <label>Card end date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Credit_balance_status__c</fullName>
+        <defaultValue>&quot;Pending&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Credit balance status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>false</default>
+                    <label>Pending</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Date_of_debt_repayment__c</fullName>
+        <externalId>false</externalId>
+        <formula>DATE (YEAR (TODAY ()), MONTH (TODAY ()) + 1, 1) - 1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Date of debt repayment</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Interest_payable_amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>Requested_Balance__c * 0.05</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Interest payable, amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Mailing_to_email__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Mailing to email</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Replenishment_per_month__c</fullName>
+        <externalId>false</externalId>
+        <formula>Balance__c * 0.03</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Replenishment per month</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Requested_Balance__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Requested Balance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Type_of_card__c</fullName>
+        <externalId>false</externalId>
+        <label>Type of card</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>cards without digital media</fullName>
+                    <default>false</default>
+                    <label>cards without digital media</label>
+                </value>
+                <value>
+                    <fullName>cards with bar-code</fullName>
+                    <default>false</default>
+                    <label>cards with bar-code</label>
+                </value>
+                <value>
+                    <fullName>cards with a magnetic strip</fullName>
+                    <default>false</default>
+                    <label>cards with a magnetic strip</label>
+                </value>
+                <value>
+                    <fullName>smart cards</fullName>
+                    <default>false</default>
+                    <label>smart cards</label>
+                </value>
+                <value>
+                    <fullName>contact cards</fullName>
+                    <default>false</default>
+                    <label>contact cards</label>
+                </value>
+                <value>
+                    <fullName>magnetic-chip cards,</fullName>
+                    <default>false</default>
+                    <label>magnetic-chip cards,</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Plastic card</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Active__c</columns>
+        <columns>Bank_account__c</columns>
+        <columns>Card_end_date__c</columns>
+        <columns>Type_of_card__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>PC-{0000}</displayFormat>
+        <label>Plastic card Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Plastic cards</pluralLabel>
+    <recordTypes>
+        <fullName>Credit_Card_Record_Type</fullName>
+        <active>true</active>
+        <label>Credit Card Record Type</label>
+        <picklistValues>
+            <picklist>Credit_balance_status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_card__c</picklist>
+            <values>
+                <fullName>cards with a magnetic strip</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>cards with bar-code</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>cards without digital media</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>contact cards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>magnetic-chip cards%2C</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>smart cards</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Debit_Card_Record_Type</fullName>
+        <active>true</active>
+        <label>Debit Card Record Type</label>
+        <picklistValues>
+            <picklist>Credit_balance_status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_card__c</picklist>
+            <values>
+                <fullName>cards with a magnetic strip</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>cards with bar-code</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>cards without digital media</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>contact cards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>magnetic-chip cards%2C</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>smart cards</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Plactic_Card_Record_Type</fullName>
+        <active>true</active>
+        <label>Plactic Card Record Type</label>
+        <picklistValues>
+            <picklist>Credit_balance_status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_card__c</picklist>
+            <values>
+                <fullName>cards with a magnetic strip</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>cards with bar-code</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>cards without digital media</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>contact cards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>magnetic-chip cards%2C</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>smart cards</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Order_Credit</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Order Credit</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/flow/Order_Credit_Balance?varId={!Plastic_card__c.Id}&amp;retURL={!Plastic_card__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Reissue_of_a_card</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Reissue of a card</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>https://na57.salesforce.com/flow/Reissue_Plastic_Card/3010b000000gFLhAAM?varCardId={!Plastic_card__c.Id}</url>
+    </webLinks>
+</CustomObject>

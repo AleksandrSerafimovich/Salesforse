@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Transaction</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Transactions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plastic card --></label>
+        <name>Card__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Merchant --></label>
+        <name>Merchant__c</name>
+        <relationshipLabel><!-- Transactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Next day --></label>
+        <name>Next_day__c</name>
+    </fields>
+    <fields>
+        <label><!-- Next month --></label>
+        <name>Next_month__c</name>
+    </fields>
+    <fields>
+        <label><!-- Operation Type --></label>
+        <name>Operation_Type__c</name>
+        <picklistValues>
+            <masterLabel>Replenishment</masterLabel>
+            <translation><!-- Replenishment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawal</masterLabel>
+            <translation><!-- Withdrawal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processing</masterLabel>
+            <translation><!-- Processing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Transaction Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Card is not active --></errorMessage>
+        <name>Active_card_and_acc</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Daily limit exceeded --></errorMessage>
+        <name>Daily_limit</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Monthly limit exceeded --></errorMessage>
+        <name>Monthly_limit</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- One-time limit exceeded --></errorMessage>
+        <name>One_time_limit</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Transaction can not be made due to lack of balance --></errorMessage>
+        <name>Valid_balance</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Submit_for_Credit_Balance</name>
+        <label>Submit for Credit Balance</label>
+        <locationX>431</locationX>
+        <locationY>262</locationY>
+        <actionName>submit</actionName>
+        <actionType>submit</actionType>
+        <connector>
+            <targetReference>Yout_status</targetReference>
+        </connector>
+        <inputParameters>
+            <name>objectId</name>
+            <value>
+                <elementReference>varId</elementReference>
+            </value>
+        </inputParameters>
+        <outputParameters>
+            <assignToReference>varStatus</assignToReference>
+            <name>instanceStatus</name>
+        </outputParameters>
+    </actionCalls>
+    <interviewLabel>Order Credit Balance {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Order Credit Balance</label>
+    <processType>Flow</processType>
+    <screens>
+        <name>Enter_Credit_Balance</name>
+        <label>Enter Credit Balance</label>
+        <locationX>242</locationX>
+        <locationY>184</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Submit_for_Credit_Balance</targetReference>
+        </connector>
+        <fields>
+            <name>Credit_Balance</name>
+            <dataType>Currency</dataType>
+            <defaultValue>
+                <numberValue>100.0</numberValue>
+            </defaultValue>
+            <fieldText>Credit Balance</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <scale>0</scale>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Yout_status</name>
+        <label>Yout status</label>
+        <locationX>614</locationX>
+        <locationY>360</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Statusorder</name>
+            <fieldText>Status order: {!varStatus}</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>Enter_Credit_Balance</startElementReference>
+    <variables>
+        <name>varId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>varStatus</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

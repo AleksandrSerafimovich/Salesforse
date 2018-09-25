@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Plastic card</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Plastic cards</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Balance --></label>
+        <name>Balance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bank account --></label>
+        <name>Bank_account__c</name>
+        <relationshipLabel><!-- Plastic cards --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Card end date --></label>
+        <name>Card_end_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Credit balance status --></label>
+        <name>Credit_balance_status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Date of debt repayment --></label>
+        <name>Date_of_debt_repayment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interest payable, amount --></label>
+        <name>Interest_payable_amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mailing to email --></label>
+        <name>Mailing_to_email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Replenishment per month --></label>
+        <name>Replenishment_per_month__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requested Balance --></label>
+        <name>Requested_Balance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type of card --></label>
+        <name>Type_of_card__c</name>
+        <picklistValues>
+            <masterLabel>cards with a magnetic strip</masterLabel>
+            <translation><!-- cards with a magnetic strip --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>cards with bar-code</masterLabel>
+            <translation><!-- cards with bar-code --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>cards without digital media</masterLabel>
+            <translation><!-- cards without digital media --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>contact cards</masterLabel>
+            <translation><!-- contact cards --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>magnetic-chip cards,</masterLabel>
+            <translation><!-- magnetic-chip cards, --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>smart cards</masterLabel>
+            <translation><!-- smart cards --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Credit Card Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Debit Card Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Plastic card Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Credit Card Record Type --></label>
+        <name>Credit_Card_Record_Type</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Debit Card Record Type --></label>
+        <name>Debit_Card_Record_Type</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Plactic Card Record Type --></label>
+        <name>Plactic_Card_Record_Type</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Order_Credit --></label>
+        <name>Order_Credit</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Reissue_of_a_card --></label>
+        <name>Reissue_of_a_card</name>
+    </webLinks>
+</CustomObjectTranslation>
